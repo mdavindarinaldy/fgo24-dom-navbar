@@ -1,6 +1,6 @@
 # Project CSS Navbar
 
-This project is for training only. This project implement CSS Media Query to change navigation bar appeareance.
+This project is for training only. This project implement CSS Media Query & Flexbox to make navigation bar.
 
 ## Preview
 
