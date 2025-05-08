@@ -1,16 +1,17 @@
-# Project CSS Navbar
+# Project DOM Navbar
 
-This project is for training only. This project implement CSS Media Query & Flexbox to make navigation bar.
+This project is for training only. This project implement CSS Media Query & Flexbox to make navigation bar and utilize DOM Event to create hamburger menu when in mobile screen. 
 
 ## Preview
 
 ![Preview](/preview.png)
+![Preview](/preview2.png)
 
 ## How to Run this Project
 
 1. Clone this project
 ```
-git clone https://github.com/mdavindarinaldy/fgo24-css-navbar.git
+git clone https://github.com/mdavindarinaldy/fgo24-dom-navbar.git
 ```
 2. Install dependencies
 ```

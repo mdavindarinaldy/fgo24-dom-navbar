@@ -15,14 +15,46 @@
             display: flex;
             gap: 15px;
         }
+        nav, ul, a {
+            flex: 1;
+        }
+        button.menu {
+            display: none;
+        }
         @media (min-width: 768px) {
             .navbar, nav, ul {
                 flex-direction: row;
             }
         }
         @media (max-width: 768px) {
-            .navbar, nav, ul {
+            nav, ul {
                 flex-direction: column;
+            }
+            .navbar {
+                flex-direction: row;
+            }
+            .navbar>div:first-child {
+                display: none;
+            }
+            button.menu {
+                display: flex;
+                background: unset;
+                border: none;
+                height: max-content;
+                width: max-content;
+            }
+            button.menu:hover {
+                cursor: pointer;
+            }
+            ul>li:first-child {
+                display: flex;
+            }
+            ul>li.show {
+                display: flex;
+                flex: 1;
+            }
+            ul>li.hide {
+                display: none;
             }
         }
         ul {
@@ -39,6 +71,10 @@
             border-bottom: 3px solid blue;
             margin: -3px
         }
+        .navbar>button>img {
+            width: 20px;
+            height: 20px;
+        }
     </style>
 </head>
 <body>
@@ -49,12 +85,30 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Product</a></li>
-                <li><a href="#">Project</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="hide"><a href="#">Product</a></li>
+                <li class="hide"><a href="#">Project</a></li>
+                <li class="hide"><a href="#">Careers</a></li>
+                <li class="hide"><a href="#">Contact</a></li>
             </ul>
         </nav>
+        <button type="button" class="menu">
+            <img src="./icons/panel-top-open.svg" alt="menu-icon"> 
+        </button>
     </div>
+    <script>
+        const btn = document.querySelector('.navbar>button:last-child')
+        btn.addEventListener('click', function() {
+            const view = document.querySelectorAll('.navbar>nav>ul>li')
+            view.forEach((item) => {
+                if (item.hasAttribute('class') && item.getAttribute('class') === 'hide') {
+                    item.setAttribute('class', 'show')
+                    btn.firstElementChild.setAttribute('src','./icons/panel-top-close.svg')
+                } else if (item.hasAttribute ('class')) {
+                    item.setAttribute('class','hide')
+                    btn.firstElementChild.setAttribute('src','./icons/panel-top-open.svg')
+                }
+            })
+        })
+    </script>
 </body>
 </html>
